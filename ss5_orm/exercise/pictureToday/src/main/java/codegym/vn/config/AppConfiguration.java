@@ -41,7 +41,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/WEB-INF/Views/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -69,7 +69,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public DriverManagerDataSource getDataSource() {
         DriverManagerDataSource datasource = new DriverManagerDataSource();
         datasource.setDriverClassName("com.mysql.jdbc.Driver");
-        datasource.setUrl("jdbc:mysql://localhost:3306/demoManagerCustomerOrm?useSSL=false&useUnicode=true&characterEncoding=utf8");
+        datasource.setUrl("jdbc:mysql://localhost:3306/pictureTodayDB?useSSL=false&useUnicode=true&characterEncoding=utf8");
         datasource.setUsername("root");
         datasource.setPassword("261024");
         return datasource;
