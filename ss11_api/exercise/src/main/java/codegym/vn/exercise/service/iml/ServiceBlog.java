@@ -41,6 +41,7 @@ public class ServiceBlog implements IServiceBlog {
 
     @Override
     public List<Blog> listQueryCategory(Integer id) {
-        return repositoryBlog.listQueryCategory(id);
+
+        return repositoryBlog.findAllByCategoryBlog_IdCategory(id);
     }
 }

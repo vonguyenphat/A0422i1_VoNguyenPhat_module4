@@ -40,5 +40,4 @@ public class RestfulBlogCategory {
         return serviceBlog.findById(id);
     }
 
-
 }
