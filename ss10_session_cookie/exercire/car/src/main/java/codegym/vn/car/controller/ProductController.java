@@ -27,6 +27,7 @@ public class ProductController {
         modelAndView.addObject("products", productService.findAll());
         return modelAndView;
     }
+
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable("id") Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = Optional.ofNullable(productService.findById(id));
@@ -38,6 +39,18 @@ public class ProductController {
             return "redirect:/shopping-cart";
         }
         cart.addProduct(productOptional.get());
+        return "redirect:/shop";
+    }
+
+    @PostMapping(value = "/update")
+    public String updateProduct(@RequestParam("id") Long id,
+                                @RequestParam("name") String name,
+                                @RequestParam("price") double price,
+                                @RequestParam("description") String description,
+                                @RequestParam("picture") String picture
+    ) {
+        Product product = new Product(id, name, price, description, picture);
+        productService.updateProduct(product);
         return "redirect:/shop";
     }
 }
