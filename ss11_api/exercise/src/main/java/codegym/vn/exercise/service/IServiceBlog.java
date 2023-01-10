@@ -16,4 +16,5 @@ public interface IServiceBlog {
     void deleteById(Integer id);
 
     List<Blog> listQueryCategory(Integer id);
+    List<Blog> search(String name);
 }

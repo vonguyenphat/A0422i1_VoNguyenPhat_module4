@@ -44,4 +44,9 @@ public class ServiceBlog implements IServiceBlog {
 
         return repositoryBlog.findAllByCategoryBlog_IdCategory(id);
     }
+
+    @Override
+    public List<Blog> search(String name) {
+        return repositoryBlog.findByNameContaining(name);
+    }
 }

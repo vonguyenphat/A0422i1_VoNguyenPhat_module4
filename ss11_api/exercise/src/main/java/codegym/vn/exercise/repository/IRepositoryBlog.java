@@ -14,4 +14,5 @@ public interface IRepositoryBlog extends JpaRepository<Blog, Integer> {
     @Query("select b.id, b.name, b.content, b.categoryBlog.idCategory from blog b  where  b.categoryBlog.idCategory= :idCategoryParam")
     List<Blog> listQueryCategory(@Param("idCategoryParam") Integer idCategoryParam);
     List<Blog> findAllByCategoryBlog_IdCategory(Integer id);
+    List<Blog> findByNameContaining(String name);
 }
